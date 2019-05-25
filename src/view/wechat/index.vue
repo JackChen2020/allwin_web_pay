@@ -9,7 +9,7 @@
             <div class="mod-ct">
                 <div class="amount">￥{{data.amount}}</div>
                 <div class="realname hide">转账金额请输入{{data.amount}}元，请勿修改金额，如修改导致不到账。本平台不承担责任！</div>
-                <div class="realname hide">先截屏,再打开微信扫一扫,从相册选择图片支付</div>
+                <div class="realname hide">text</div>
                 <vue-qr :text="downloadData.url"
                         :margin="0"
                         colorDark="#f67b29"
@@ -58,7 +58,8 @@ export default {
             minute:0,
             second:0,
             data:{},
-            ordercode:'0'
+            ordercode:'0',
+            text:''
         }
     },
     methods:{
@@ -100,6 +101,13 @@ export default {
                 // console.log("this.data:",this.data)
                 this.data.time = timestampToTime(this.data.expire_time).toString() + '过期，过期后请勿支付！'
                 this.downloadData.url  = this.data.url
+
+                if(this.data.type === 'QR001'){
+                    this.text = "先截屏,再打开微信扫一扫,从相册选择图片支付"
+                }else if (this.data.type === 'QR005'){
+                    this.text = "先截屏,再打开支付宝或者微信扫一扫,从相册选择图片支付"
+                }
+
                 this.countTime()
             },
             errorcallback : () => {
