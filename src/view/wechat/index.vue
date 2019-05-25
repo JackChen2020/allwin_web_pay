@@ -3,6 +3,7 @@
         <div class="main_title">
             <div class="title">
                 <span class="icon_log"></span>
+                <span class="icon_font">傲银支付</span>
             </div>
         </div>
         <div class="mod-ct_title">
@@ -28,7 +29,7 @@
                 <div class="tip">
                     <div class="icon-scan"></div>
                     <div class="tip_text">
-                        <p class="showtext">打开微信 [扫一扫]</p>
+                        <p class="showtext">{{text1}}</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +60,8 @@ export default {
             second:0,
             data:{},
             ordercode:'0',
-            text:''
+            text:'',
+            text1:''
         }
     },
     methods:{
@@ -104,8 +106,10 @@ export default {
 
                 if(this.data.type === 'QR001'){
                     this.text = "先截屏,再打开微信扫一扫,从相册选择图片支付"
+                    this.text1 = '打开微信 [扫一扫]'
                 }else if (this.data.type === 'QR005'){
                     this.text = "先截屏,再打开支付宝或者微信扫一扫,从相册选择图片支付"
+                    this.text1 = '打开微信或支付宝 [扫一扫]'
                 }
 
                 this.countTime()
@@ -127,17 +131,22 @@ export default {
         width:98%;
         padding: .1rem;
         .title{
-            height: 1.8rem;
-            line-height: 1.8rem;
+            height: 2.2rem;
+            line-height: 2.2rem;
             text-align: center;
             background: #fff;
             .icon_log {
-                background : url('../../assets/logo_weixin.jpg') no-repeat;
+                background : url('../../assets/logo.png') no-repeat;
                 background-size: cover;
                 display: inline-block;
                 width: 3.5rem;
-                height: 1rem;
+                height: 2rem;
                 vertical-align: middle;
+            }
+            .icon_font {
+                color: transparent;
+                -webkit-text-stroke: 1px #9458ff;
+                letter-spacing: 0.04em;
             }
         }
     }
