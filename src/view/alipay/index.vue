@@ -9,7 +9,7 @@
             <div class="mod-ct">
                 <div class="amount">￥{{data.amount}}</div>
                 <div class="realname hide">转账金额请输入{{data.amount}}元，请勿修改金额，如修改导致不到账。本平台不承担责任！</div>
-                <div class="realname hide">先截屏,再打开微信扫一扫,从相册选择图片支付</div>
+                <div class="realname hide">先截屏,再打开支付宝扫一扫,从相册选择图片支付</div>
                 <vue-qr :text="downloadData.url"
                         :margin="0"
                         colorDark="#f67b29"
@@ -28,7 +28,7 @@
                 <div class="tip">
                     <div class="icon-scan"></div>
                     <div class="tip_text">
-                        <p class="showtext">打开微信 [扫一扫]</p>
+                        <p class="showtext">打开支付宝 [扫一扫]</p>
                     </div>
                 </div>
             </div>
@@ -126,11 +126,11 @@ export default {
             text-align: center;
             background: #fff;
             .icon_log {
-                background : url('../../assets/logo_weixin.jpg') no-repeat;
+                background : url('../../assets/logo_alipay.jpg') no-repeat;
                 background-size: cover;
                 display: inline-block;
                 width: 3.5rem;
-                height: 1rem;
+                height: 1.7rem;
                 vertical-align: middle;
             }
         }

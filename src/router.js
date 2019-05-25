@@ -18,6 +18,14 @@ const routes = [
     meta: {
       title: '在线支付'
     }
+  },
+  {
+    path: '/alipay/:id',
+    name: 'alipay',
+    component: () => import('./view/alipay/index'),
+    meta: {
+      title: '在线支付'
+    }
   }
 ];
 
