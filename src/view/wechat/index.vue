@@ -9,7 +9,7 @@
             <div class="mod-ct">
                 <div class="amount">￥{{data.amount}}</div>
                 <div class="realname hide">转账金额请输入{{data.amount}}元，请勿修改金额，如修改导致不到账。本平台不承担责任！</div>
-                <div class="realname hide">text</div>
+                <div class="realname hide">{{text}}</div>
                 <vue-qr :text="downloadData.url"
                         :margin="0"
                         colorDark="#f67b29"
