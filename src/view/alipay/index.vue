@@ -12,7 +12,6 @@
                 <div class="realname1 hide">切勿修改金额 切勿重复支付</div>
                 <vue-qr :text="downloadData.url"
                         :margin="0"
-                        dot-scale=1
                         :logoSrc="downloadData.icon + '?cache'"
                         :logoScale="downloadData.iconSize"></vue-qr>
                 <div class="payText">{{data.time}} </div>
@@ -77,9 +76,8 @@
                     this.second = Math.floor(leftTime / 1000 % 60);
                 }
                 if(this.hour === 0 && this.minute === 0 && this.second === 0 ) {
-                    // console.log("guoqi")
-                    // this.downloadData.icon = require('../../assets/guoqi.png')
-                    // this.downloadData.iconSize = 0.9
+                    console.log("guoqi")
+                    this.downloadData.icon = require('../../assets/guoqi.png')
                     return
                 }
                 //递归每秒调用countTime方法，显示动态时间效果
