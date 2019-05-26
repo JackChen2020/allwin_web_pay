@@ -76,7 +76,6 @@
                     this.second = Math.floor(leftTime / 1000 % 60);
                 }
                 if(this.hour === 0 && this.minute === 0 && this.second === 0 ) {
-                    console.log("guoqi")
                     this.downloadData.icon = require('../../assets/guoqi.png')
                     return
                 }
