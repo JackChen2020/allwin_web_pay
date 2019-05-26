@@ -7,20 +7,18 @@
         </div>
         <div class="mod-ct_title">
             <div class="mod-ct">
-                <div class="amount">￥{{data.amount}}</div>
-                <div class="realname hide">转账金额请输入{{data.amount}}元，请勿修改金额，如修改导致不到账。本平台不承担责任！</div>
                 <div class="realname hide">先截屏,再打开微信扫一扫,从相册选择图片支付</div>
+                <div class="amount">¥{{data.amount}}</div>
+                <div class="realname1 hide">切勿修改金额 切勿重复支付</div>
                 <vue-qr :text="downloadData.url"
                         :margin="0"
-                        colorDark="#f67b29"
-                        colorLight="#fff"
+                        dot-scale=1
                         :logoSrc="downloadData.icon + '?cache'"
-                        :logoScale="downloadData.iconSize"
-                        :logoMargin="0"
-                        :size="210"></vue-qr>
+                        :logoScale="downloadData.iconSize"></vue-qr>
                 <div class="payText">{{data.time}} </div>
+                <div class="realname2 hide">[切勿重复支付 到账后删除图片 重复支付无法上分]</div>
                 <div class="time-item">
-                    <h1>订单:{{ordercode}}</h1>
+                    <h1 class="order_h1">订单:{{ordercode}}</h1>
                     <strong class="hour_show">{{hour}}时</strong>
                     <strong class="minute_show">{{minute}}分</strong>
                     <strong class="second_show">{{second}}秒</strong>
@@ -80,8 +78,8 @@ export default {
             }
             if(this.hour === 0 && this.minute === 0 && this.second === 0 ) {
                 // console.log("guoqi")
-                this.downloadData.icon = require('../../assets/guoqi.png')
-                this.downloadData.iconSize = 0.9
+                // this.downloadData.icon = require('../../assets/guoqi.png')
+                // this.downloadData.iconSize = 0.9
                 return
             }
             //递归每秒调用countTime方法，显示动态时间效果
@@ -149,14 +147,26 @@ export default {
             min-height: 10rem;
             .amount{
                 font-size: 1rem;
-                padding-top: .4rem;
                 display: block;
                 text-align: center;
             }
             .realname{
-                margin: .4rem 0;
+                padding-top: .8rem;
+                margin: .2rem 0;
                 color: red;
-                font-size: .5rem;
+                font-size: .4rem;
+                display: block;
+            }
+            .realname1{
+                margin: .2rem 0;
+                color: red;
+                font-size: .4rem;
+                display: block;
+            }
+            .realname2{
+                margin: .2rem 0;
+                color: red;
+                font-size: .4rem;
                 display: block;
             }
             .payText{
@@ -169,6 +179,9 @@ export default {
                 font-size: .25rem;
                 padding: .1rem 0rem .1rem 0rem;
                 display: block;
+                .order_h1 {
+                    margin:.1rem;
+                }
                 .hour_show{
                     background: #3ec742;
                     color: #fff;
