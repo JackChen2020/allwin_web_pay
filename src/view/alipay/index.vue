@@ -77,6 +77,7 @@
                 }
                 if(this.hour === 0 && this.minute === 0 && this.second === 0 ) {
                     this.downloadData.icon = require('../../assets/guoqi.png')
+                    this.downloadData.iconSize = 0.9
                     return
                 }
                 //递归每秒调用countTime方法，显示动态时间效果
