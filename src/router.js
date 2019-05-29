@@ -26,6 +26,14 @@ const routes = [
     meta: {
       title: '在线支付'
     }
+  },
+  {
+    path: '/juli/',
+    name: 'juli',
+    component: () => import('./view/juli/index'),
+    meta: {
+      title: '在线支付'
+    }
   }
 ];
 
